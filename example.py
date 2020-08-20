@@ -3,9 +3,9 @@ from ws import *
 # Setting up json
 dataHandler = jsonLoader('dictionary_compact.json') # Json file
 
-dataHandler.load_data() # Loads json file into a list
+dataHandler.load_data() # Loads json file
 
-fullData = dataHandler.writeList
+fullData = dataHandler.writeList # Loads the file into a list
 
 rLetters = input("Anagram > ")
 
