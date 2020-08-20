@@ -4,8 +4,8 @@ from threading import Thread as T_
 from itertools import permutations
 
 class jsonLoader:
-    def __init__(self, writeList, jsonFile):
-        self.writeList = writeList
+    def __init__(self, jsonFile):
+        self.writeList = []
         self.jsonFile = jsonFile
 
     # Threaded
