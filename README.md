@@ -2,5 +2,16 @@
 
 A python program to solve anagrams
 
-just start the program with python3 and type in your anagram!
- 
+- ws.py libarary
+
+- example.py example code
+
+- dictionary_compact.json english dictionary json file
+
+load the library like this:
+
+```python
+import ws
+```
+
+
