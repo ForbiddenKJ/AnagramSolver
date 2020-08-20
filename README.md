@@ -2,11 +2,11 @@
 
 A python program to solve anagrams
 
-- ws.py libarary
+- `ws.py` libarary
 
-- example.py example code
+- `example.py` example code
 
-- dictionary_compact.json english dictionary json file
+- `dictionary_compact.json` english dictionary json file
 
 load the library like this:
 
