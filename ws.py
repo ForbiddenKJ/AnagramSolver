@@ -22,16 +22,6 @@ class jsonLoader:
         threadFunc.start()
         threadFunc.join()
 
-fullData = []
-# Handling The Json File
-dataHandler = jsonLoader(fullData, 'dictionary_compact.json')
-dataHandler.load_data()
-def factorial(num):
-    factorial = 0
-    for i in range(1,num + 1):
-       factorial = factorial*i
-
-    return factorial
 def randomLetters(size):
     nums = []
     for _ in range(size):
@@ -77,15 +67,3 @@ class wordBrute:
         correctWord_ = list(set(jsonData) & set(self.writeList))
 
         return correctWord_
-
-
-rLetters = input("Anagram > ")
-bruteList = []; bruteHandler = wordBrute(bruteList, rLetters);
-bruteHandler.brute()
-correctWord = bruteHandler.solve(fullData)
-
-correctWord = sorted(correctWord, key=len)
-
-for i in correctWord:
-    if len(i) > 2:
-        print(i+': '+str(len(i)))
