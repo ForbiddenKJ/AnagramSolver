@@ -1,4 +1,3 @@
-import random
 import json
 from threading import Thread as T_
 from itertools import permutations
@@ -22,14 +21,6 @@ class jsonLoader:
         threadFunc.start()
         threadFunc.join()
 
-def randomLetters(size):
-    nums = []
-    for _ in range(size):
-        rand = random.randint(97, 122)
-        nums.append(rand)
-
-    letters = [chr(_) for _ in nums]
-    return ''.join(letters)
 
 def split(word):
     return [char for char in word]
