@@ -7,7 +7,6 @@ class jsonLoader:
         self.writeList = []
         self.jsonFile = jsonFile
 
-    # Threaded
     def load_data_threaded(self):
         with open(self.jsonFile) as jFile:
             data = json.load(jFile)
@@ -15,7 +14,6 @@ class jsonLoader:
         for key, item in data.items():
             self.writeList.append(key)
 
-    # Non Threaded
     def load_data(self):
         threadFunc = T_(target=self.load_data_threaded())
         threadFunc.start()
