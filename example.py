@@ -5,11 +5,7 @@ dataHandler = jsonLoader('dictionary_compact.json') # Json file
 
 dataHandler.load_data() # Loads json file
 
-<<<<<<< HEAD
-fullData = dataHandler.writeList # Load list into a variable
-=======
 fullData = dataHandler.writeList # Loads the file into a list
->>>>>>> master
 
 rLetters = input("Anagram > ")
 
