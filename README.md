@@ -1,19 +1,33 @@
 # AnagramSolver
 
-
-## Code
+## Files
 
 A python program to solve anagrams
 
-- `ws.py` library
+- `anagram.py` library
 
 - `example.py` example code
 
 - `dictionary_compact.json` english dictionary json file
 
+### Auto
+
+We only need to import Anagram from anagram.py
+```python
+from anagram import Anagram
+```
+
+Our json file will be dictionary_compact.json
+```python
+solutions = Solve('dictionary_compact.json', anagram words)
+print(solutions)
+```
+
+### Manual
+
 Load the library like this:
 ```python
-from ws import *
+from anagram import *
 ```
 
 Next you need to load you json library of choice where the keys are words
