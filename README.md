@@ -1,6 +1,6 @@
 # AnagramSolver
 
-## Code
+## Files
 
 A python program to solve anagrams
 
