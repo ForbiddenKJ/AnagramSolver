@@ -19,7 +19,7 @@ from anagram import Anagram
 
 Our json file will be dictionary_compact.json
 ```python
-solutions = Solve('dictionary_compact.json', Anagram)
+solutions = Solve('dictionary_compact.json', anagram words)
 print(solutions)
 ```
 
