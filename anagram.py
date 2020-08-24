@@ -24,12 +24,12 @@ def split(word):
     return [char for char in word]
 
 class wordBrute:
-    def __init__(self, writeList, letters):
-        self.writeList = writeList
+    def __init__(self, letters):
+        self.writeList = []
         self.letters = letters
 
     def brute(self):
-
+        x = []
         for p in permutations(self.letters):
             self.writeList.append(''.join(p))
 
