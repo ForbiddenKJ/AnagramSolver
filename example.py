@@ -1,4 +1,4 @@
-from ws import *
+from anagram import *
 
 # Setting up json
 dataHandler = jsonLoader('dictionary_compact.json') # Json file
