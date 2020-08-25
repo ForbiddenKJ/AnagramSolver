@@ -1,6 +1,7 @@
 import json
 from threading import Thread as T_
 from itertools import permutations
+import gc
 
 class jsonLoader:
     def __init__(self, jsonFile):
@@ -10,6 +11,7 @@ class jsonLoader:
     def load_data_threaded(self):
         with open(self.jsonFile) as jFile:
             data = json.load(jFile)
+            gc.collect()
 
         jFile.close()
 
@@ -24,6 +26,7 @@ class jsonLoader:
 
 def split(word):
     return [char for char in word]
+    gc.collect()
 
 class wordBrute:
     def __init__(self, letters):
@@ -38,6 +41,7 @@ class wordBrute:
         newList = []
 
         for p in self.writeList:
+            gc.collect()
             chars = split(p)
 
             while len(chars) > 1:
