@@ -11,6 +11,8 @@ class jsonLoader:
         with open(self.jsonFile) as jFile:
             data = json.load(jFile)
 
+        jFile.close()
+
         for key, item in data.items():
             self.writeList.append(key)
 
