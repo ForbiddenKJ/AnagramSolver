@@ -6,6 +6,8 @@ A python program to solve anagrams
 
 - `anagram.py` library
 
+- `anagram_optimised.py` optimised library (refer to the optimised the Optimised section)
+
 - `example.py` example code
 
 - `dictionary_compact.json` english dictionary json file
@@ -56,3 +58,12 @@ And we have finished with the setup we can start completing things
 correctWord = bruteHandler.solve(fullData)
 print(correctWord)
 ```
+
+### Optimised
+
+You need to install numba
+```python
+pip install numba
+```
+
+and once that has complete you can then follow Manual or Auto
