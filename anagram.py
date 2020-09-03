@@ -4,7 +4,7 @@ from itertools import permutations
 import gc
 
 class jsonLoader:
-    def __init__(self, jsonFile):
+    def __init__(self, jsonFile:str):
         self.writeList = []
         self.jsonFile = jsonFile
 
@@ -16,6 +16,7 @@ class jsonLoader:
         jFile.close()
 
         for key, item in data.items():
+            key = key.lower()
             self.writeList.append(key)
 
     def load_data(self):
@@ -24,12 +25,12 @@ class jsonLoader:
         threadFunc.join()
 
 
-def split(word):
+def split(word:str):
     return [char for char in word]
     gc.collect()
 
 class wordBrute:
-    def __init__(self, letters):
+    def __init__(self, letters:str):
         self.writeList = []
         self.letters = letters
 
@@ -56,7 +57,7 @@ class wordBrute:
 
         del newList
 
-    def solve(self,jsonData):
+    def solve(self,jsonData:str):
         self.writeList
 
         correctWord_ = list(set(jsonData) & set(self.writeList))
@@ -64,7 +65,8 @@ class wordBrute:
         return correctWord_
 
 class Anagram:
-    def Solve(JsonFile, words):
+    def Solve(JsonFile:str, words:str):
+        words = words.lower()
         dataHandler = jsonLoader(JsonFile)
         dataHandler.load_data()
         fullData = dataHandler.writeList
@@ -72,6 +74,12 @@ class Anagram:
         bruteHandler.brute()
         bruteList = bruteHandler.writeList
         solutions = bruteHandler.solve(fullData)
+
+        # Tidy Up
         solutions = sorted(solutions, key=len)
 
         return solutions
+
+# Example
+if __name__ == '__main__':
+    print(Anagram.Solve('dictionary_compact.json', 'Anagram'))
