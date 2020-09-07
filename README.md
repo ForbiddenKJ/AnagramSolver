@@ -6,7 +6,7 @@ A python program to solve anagrams
 
 - `anagram.py` library
 
-- `anagram_optimised.py` optimised library (refer to the optimised the Optimised section)
+- `anagram_optimised.py` optimised library (refer to the Optimised section)
 
 - `example.py` example code
 
