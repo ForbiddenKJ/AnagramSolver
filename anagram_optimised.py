@@ -76,3 +76,7 @@ class Anagram:
         solutions = sorted(solutions, key=len)
 
         return solutions
+
+# Example
+if __name__ == '__main__':
+    print(Anagram.Solve('dictionary_compact.json', 'Anagram'))
