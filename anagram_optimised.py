@@ -2,9 +2,7 @@ import json
 from threading import Thread as T_
 from itertools import permutations
 import gc
-
-# You need to install (pip install numba)
-from numba import njit
+import multiprocessing
 
 class jsonLoader:
     def __init__(self, jsonFile):
@@ -26,10 +24,12 @@ class jsonLoader:
         threadFunc.start()
         threadFunc.join()
 
-@njit
 def split(word):
     return [char for char in word]
     gc.collect()
+
+def returnPerm(x):
+    return x
 
 class wordBrute:
     def __init__(self, letters):
@@ -38,7 +38,13 @@ class wordBrute:
 
     def brute(self):
         x = []
-        for p in permutations(self.letters):
+
+        with multiprocessing.Pool() as pool:
+            results = pool.map(returnPerm, permutations(self.letters))
+
+        perms = results
+
+        for p in perms:
             self.writeList.append(''.join(p))
 
         newList = []
