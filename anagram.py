@@ -36,26 +36,18 @@ class wordBrute:
 
     def brute(self):
         x = []
-        for p in permutations(self.letters):
-            self.writeList.append(''.join(p))
+
+        self.writeList = [''.join(p) for p in permutations(self.letters)]
 
         newList = []
 
         for p in self.writeList:
-            gc.collect()
             chars = split(p)
-
             while len(chars) > 1:
-
                 newList.append("".join(chars))
                 del chars[-1]
 
-        newList = list(newList)
-
-        for i in newList:
-            self.writeList.append(i)
-
-        del newList
+        self.writeList = newList
 
     def solve(self,jsonData:str):
         self.writeList
