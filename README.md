@@ -61,9 +61,5 @@ print(correctWord)
 
 ### Optimised
 
-You need to install numba
-```python
-pip install numba
-```
-
-and once that has complete you can then follow Manual or Auto
+This does not optimise speed!
+It is ever so slightly slower than anagram.py but it optimises ram usage

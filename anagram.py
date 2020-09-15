@@ -1,7 +1,6 @@
 import json
 from threading import Thread as T_
 from itertools import permutations
-import gc
 
 class jsonLoader:
     def __init__(self, jsonFile:str):
@@ -11,7 +10,6 @@ class jsonLoader:
     def load_data_threaded(self):
         with open(self.jsonFile) as jFile:
             data = json.load(jFile)
-            gc.collect()
 
         jFile.close()
 
@@ -27,7 +25,6 @@ class jsonLoader:
 
 def split(word:str):
     return [char for char in word]
-    gc.collect()
 
 class wordBrute:
     def __init__(self, letters:str):
@@ -50,7 +47,6 @@ class wordBrute:
         self.writeList = newList
 
     def solve(self,jsonData:str):
-        self.writeList
 
         correctWord_ = list(set(jsonData) & set(self.writeList))
 
@@ -74,4 +70,7 @@ class Anagram:
 
 # Example
 if __name__ == '__main__':
+    import time
+    start_time = time.time()
     print(Anagram.Solve('dictionary_compact.json', 'Anagram'))
+    print("--- %s seconds ---" % (time.time() - start_time))
