@@ -6,8 +6,6 @@ A python program to solve anagrams
 
 - `anagram.py` library
 
-- `anagram_optimised.py` optimised library (refer to the Optimised section)
-
 - `example.py` example code
 
 - `dictionary_compact.json` english dictionary json file
@@ -58,8 +56,3 @@ And we have finished with the setup we can start completing things
 correctWord = bruteHandler.solve(fullData)
 print(correctWord)
 ```
-
-### Optimised
-
-This does not optimise speed!
-It is ever so slightly slower than anagram.py but it optimises ram usage

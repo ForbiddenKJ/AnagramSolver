@@ -5,6 +5,7 @@ from itertools import permutations
 class jsonLoader:
     def __init__(self, jsonFile:str):
         self.writeList = []
+        self.allData = []
         self.jsonFile = jsonFile
 
     def load_data_threaded(self):
@@ -21,6 +22,16 @@ class jsonLoader:
         threadFunc = T_(target=self.load_data_threaded())
         threadFunc.start()
         threadFunc.join()
+
+    def load_keys(self):
+        with open(self.jsonFile) as jFile:
+            data = json.load(jFile)
+
+        jFile.close()
+
+        for key, item in data.items():
+            key = key.lower()
+            self.allData.append([key,item])
 
 
 def split(word:str):
@@ -67,6 +78,18 @@ class Anagram:
         solutions = sorted(solutions, key=len)
 
         return solutions
+
+    def Define(JsonFile:str, word:str):
+        word = word.lower()
+        dataHandler = jsonLoader(JsonFile)
+        dataHandler.load_keys()
+        fullData = dataHandler.allData
+
+        for i in fullData:
+            if i[0] == word: return i
+
+        return False
+
 
 # Example
 if __name__ == '__main__':
