@@ -6,8 +6,6 @@ A python program to solve anagrams
 
 - `anagram.py` library
 
-- `dictionary.json` english dictionary json file
-
 ### Auto
 
 We only need to import Anagram from anagram.py

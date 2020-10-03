@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: AnagramSolver
-Version: 0.1.0
+Version: 0.1.1
 Summary: Solves Your Anagrams
 Home-page: https://github.com/ForbiddenKJ/AnagramSolver
 Author: James Butcher
@@ -14,13 +14,11 @@ Description: # AnagramSolver
         
         - `anagram.py` library
         
-        - `dictionary.json` english dictionary json file
-        
         ### Auto
         
         We only need to import Anagram from anagram.py
         ```python
-        from anagram import Anagram
+        from anagram import *
         ```
         
         Our json file will be dictionary_compact.json
