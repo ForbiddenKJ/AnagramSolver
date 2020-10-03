@@ -1,0 +1,71 @@
+Metadata-Version: 2.1
+Name: AnagramSolver
+Version: 0.1.0
+Summary: Solves Your Anagrams
+Home-page: https://github.com/ForbiddenKJ/AnagramSolver
+Author: James Butcher
+Author-email: jamesbutcher167@gmail.com
+License: UNKNOWN
+Description: # AnagramSolver
+        
+        ## Files
+        
+        A python program to solve anagrams
+        
+        - `anagram.py` library
+        
+        - `dictionary.json` english dictionary json file
+        
+        ### Auto
+        
+        We only need to import Anagram from anagram.py
+        ```python
+        from anagram import Anagram
+        ```
+        
+        Our json file will be dictionary_compact.json
+        ```python
+        solutions = Solve(anagram words, 'dictionary.json')
+        print(solutions)
+        ```
+        
+        ### Manual
+        
+        Load the library like this:
+        ```python
+        from anagram import *
+        ```
+        
+        Next you need to load you json library of choice where the keys are words
+        We will use 'dictionary_compact.json' as our example
+        ```python
+        dataHandler = jsonLoader('dictionary.json')
+        dataHandler.load_data()
+        ```
+        
+        We then need to save the data into a list
+        ```python
+        fullData = dataHandler.writeList
+        ```
+        
+        Now that all the json has been setup we can get to the
+        Heart of our operation
+        ```python
+        x = Your Anagram
+        bruteHandler = wordBrute(x)
+        bruteHandler.brute()
+        bruteList = bruteHandler.writeList
+        ```
+        
+        And we have finished with the setup we can start completing things
+        ```python
+        correctWord = bruteHandler.solve(fullData)
+        print(correctWord)
+        ```
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

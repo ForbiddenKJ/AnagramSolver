@@ -6,20 +6,18 @@ A python program to solve anagrams
 
 - `anagram.py` library
 
-- `example.py` example code
-
-- `dictionary_compact.json` english dictionary json file
+- `dictionary.json` english dictionary json file
 
 ### Auto
 
 We only need to import Anagram from anagram.py
 ```python
-from anagram import Anagram
+from anagram import *
 ```
 
 Our json file will be dictionary_compact.json
 ```python
-solutions = Solve('dictionary_compact.json', anagram words)
+solutions = Solve(anagram words, 'dictionary.json')
 print(solutions)
 ```
 
@@ -33,7 +31,7 @@ from anagram import *
 Next you need to load you json library of choice where the keys are words
 We will use 'dictionary_compact.json' as our example
 ```python
-dataHandler = jsonLoader('dictionary_compact.json')
+dataHandler = jsonLoader('dictionary.json')
 dataHandler.load_data()
 ```
 

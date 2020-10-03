@@ -1,0 +1,8 @@
+README.md
+setup.py
+AnagramSolver/__init__.py
+AnagramSolver/anagram.py
+AnagramSolver.egg-info/PKG-INFO
+AnagramSolver.egg-info/SOURCES.txt
+AnagramSolver.egg-info/dependency_links.txt
+AnagramSolver.egg-info/top_level.txt

@@ -63,32 +63,32 @@ class wordBrute:
 
         return correctWord_
 
-class Anagram:
-    def Solve(JsonFile:str, words:str):
-        words = words.lower()
-        dataHandler = jsonLoader(JsonFile)
-        dataHandler.load_data()
-        fullData = dataHandler.writeList
-        bruteHandler = wordBrute(words)
-        bruteHandler.brute()
-        bruteList = bruteHandler.writeList
-        solutions = bruteHandler.solve(fullData)
 
-        # Tidy Up
-        solutions = sorted(solutions, key=len)
+def Solve(words:str, JsonFile:str):
+    words = words.lower()
+    dataHandler = jsonLoader(JsonFile)
+    dataHandler.load_data()
+    fullData = dataHandler.writeList
+    bruteHandler = wordBrute(words)
+    bruteHandler.brute()
+    bruteList = bruteHandler.writeList
+    solutions = bruteHandler.solve(fullData)
 
-        return solutions
+    # Tidy Up
+    solutions = sorted(solutions, key=len)
 
-    def Define(JsonFile:str, word:str):
-        word = word.lower()
-        dataHandler = jsonLoader(JsonFile)
-        dataHandler.load_keys()
-        fullData = dataHandler.allData
+    return solutions
 
-        for i in fullData:
-            if i[0] == word: return i
+def Define(JsonFile:str, word:str):
+    word = word.lower()
+    dataHandler = jsonLoader(JsonFile)
+    dataHandler.load_keys()
+    fullData = dataHandler.allData
 
-        return False
+    for i in fullData:
+        if i[0] == word: return i
+
+    return False
 
 
 # Example
