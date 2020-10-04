@@ -1,6 +1,7 @@
 import json
 from threading import Thread as T_
 from itertools import permutations
+import concurrent.futures
 
 class jsonLoader:
     def __init__(self, jsonFile:str):
@@ -63,8 +64,7 @@ class wordBrute:
 
         return correctWord_
 
-
-def Solve(words:str, JsonFile:str):
+def Threaded_Solve(words:str, JsonFile:str):
     words = words.lower()
     dataHandler = jsonLoader(JsonFile)
     dataHandler.load_data()
@@ -78,6 +78,13 @@ def Solve(words:str, JsonFile:str):
     solutions = sorted(solutions, key=len)
 
     return solutions
+
+def Solve(words:str, JsonFile:str):
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        future = executor.submit(Threaded_Solve, words, JsonFile)
+        return_value = future.result()
+        return return_value
+
 
 def Define(JsonFile:str, word:str):
     word = word.lower()

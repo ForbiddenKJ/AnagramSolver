@@ -6,49 +6,17 @@ A python program to solve anagrams
 
 - `anagram.py` library
 
-### Auto
+- You will need a dictionary filled with words as keys we recommend https://github.com/matthewreagan/WebstersEnglishDictionary (dictionary_compact.json)
+
+### Example
 
 We only need to import Anagram from anagram.py
 ```python
-from anagram import *
+from AnagramSolver.anagram import Solve
 ```
 
 Our json file will be dictionary_compact.json
 ```python
-solutions = Solve(anagram words, 'dictionary.json')
+solutions = Solve(Anagram, 'dictionary_compact.json')
 print(solutions)
-```
-
-### Manual
-
-Load the library like this:
-```python
-from anagram import *
-```
-
-Next you need to load you json library of choice where the keys are words
-We will use 'dictionary_compact.json' as our example
-```python
-dataHandler = jsonLoader('dictionary.json')
-dataHandler.load_data()
-```
-
-We then need to save the data into a list
-```python
-fullData = dataHandler.writeList
-```
-
-Now that all the json has been setup we can get to the
-Heart of our operation
-```python
-x = Your Anagram
-bruteHandler = wordBrute(x)
-bruteHandler.brute()
-bruteList = bruteHandler.writeList
-```
-
-And we have finished with the setup we can start completing things
-```python
-correctWord = bruteHandler.solve(fullData)
-print(correctWord)
 ```
