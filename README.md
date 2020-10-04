@@ -1,4 +1,5 @@
 # AnagramSolver
+### A hands on approach to anagrams!
 
 ## Files
 
