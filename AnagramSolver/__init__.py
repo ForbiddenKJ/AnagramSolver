@@ -1,1 +1,4 @@
-# Init
+# __init__
+
+# Modules
+from anagram import Solve
