@@ -18,6 +18,6 @@ from AnagramSolver.anagram import Solve
 
 Our json file will be dictionary_compact.json
 ```python
-solutions = Solve(Anagram, 'dictionary.json')
+solutions = Solve(Anagram, 'dictionary_compact.json')
 print(solutions)
 ```

@@ -59,7 +59,9 @@ class wordBrute:
         self.writeList = newList
 
     def solve(self,jsonData:str):
+
         correctWord_ = list(set(jsonData) & set(self.writeList))
+
         return correctWord_
 
 def Threaded_Solve(words:str, JsonFile:str):
@@ -70,7 +72,10 @@ def Threaded_Solve(words:str, JsonFile:str):
     bruteHandler = wordBrute(words)
     bruteHandler.brute()
     bruteList = bruteHandler.writeList
-    solutions = sorted(bruteHandler.solve(fullData), key=len)
+    solutions = bruteHandler.solve(fullData)
+
+    # Tidy Up
+    solutions = sorted(solutions, key=len)
 
     return solutions
 
@@ -79,6 +84,9 @@ def Solve(words:str, JsonFile:str):
         future = executor.submit(Threaded_Solve, words, JsonFile)
         return_value = future.result()
         return return_value
+
+
+
 
 # Example
 if __name__ == '__main__':
@@ -89,3 +97,4 @@ if __name__ == '__main__':
         print("--- %s seconds ---" % (time.time() - start_time))
 
     speedTest()
+
