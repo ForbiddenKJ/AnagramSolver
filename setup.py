@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="AnagramSolver",
-    version="0.1.2",
+    version="0.1.4",
     author="James Butcher",
     author_email="jamesbutcher167@gmail.com",
     description="Solves Your Anagrams",

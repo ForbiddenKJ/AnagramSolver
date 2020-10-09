@@ -59,9 +59,7 @@ class wordBrute:
         self.writeList = newList
 
     def solve(self,jsonData:str):
-
         correctWord_ = list(set(jsonData) & set(self.writeList))
-
         return correctWord_
 
 def Threaded_Solve(words:str, JsonFile:str):
@@ -72,10 +70,7 @@ def Threaded_Solve(words:str, JsonFile:str):
     bruteHandler = wordBrute(words)
     bruteHandler.brute()
     bruteList = bruteHandler.writeList
-    solutions = bruteHandler.solve(fullData)
-
-    # Tidy Up
-    solutions = sorted(solutions, key=len)
+    solutions = sorted(bruteHandler.solve(fullData), key=len)
 
     return solutions
 
@@ -85,22 +80,12 @@ def Solve(words:str, JsonFile:str):
         return_value = future.result()
         return return_value
 
-
-def Define(JsonFile:str, word:str):
-    word = word.lower()
-    dataHandler = jsonLoader(JsonFile)
-    dataHandler.load_keys()
-    fullData = dataHandler.allData
-
-    for i in fullData:
-        if i[0] == word: return i
-
-    return False
-
-
 # Example
 if __name__ == '__main__':
-    import time
-    start_time = time.time()
-    print(Anagram.Solve('dictionary_compact.json', 'Anagram'))
-    print("--- %s seconds ---" % (time.time() - start_time))
+    def speedTest():
+        import time
+        start_time = time.time()
+        print(Solve('Anagrams', 'dictionary.json'))
+        print("--- %s seconds ---" % (time.time() - start_time))
+
+    speedTest()
